@@ -1,0 +1,30 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: agv-middleware
+  jackson:
+    date-format: yyyy-MM-dd'T'HH:mm:ss
+    time-zone: Asia/Shanghai
+    serialization:
+      write-dates-as-timestamps: false
+
+opentcs:
+  kernel:
+    rmi:
+      host: localhost
+      port: 1099
+    connection-retry-delay: 5000
+    connection-max-retries: 10
+    username: Alice
+    password: xyz
+
+logging:
+  level:
+    root: INFO
+    com.myagv.middleware: INFO
+    org.springframework.web: INFO
+    org.springframework.web.servlet: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
